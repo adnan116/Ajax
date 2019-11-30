@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Ajax</title>
+	<script type="text/javascript">
+		
+		function f2()
+		{
+			$ids = document.getElementById('setid').value;
+			var xhttp = new XMLHttpRequest();
+			xhttp.open("POST", "new.php", true);
+			xhttp.setRequestHeader('content-type', 'application/x-www-form-urlencoded')
+			xhttp.send("$ids");
+			xhttp.onreadystatechange = function()
+			{
+				if (this.readyState == 4 && this.status == 200) {
+					document.getElementById('data').innerHTML = this.responseText; 
+					//alert($d);
+				}
+
+			};
+		}
+
+	</script>
+
+</head>
+<body>
+
+	<div id="data">Click to Change!!!</div>
+	<input type="text" name="" id="setid">
+	<input type="button" name="" value="Click!" onclick="f2()" />
+
+	
+</body>
+</html>
