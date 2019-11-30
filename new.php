@@ -1,7 +1,7 @@
 <?php 
 
 	$conn = mysqli_connect('localhost','root','','test');
-	$sql = "select * from userlist where id= '{$_POST['ids']}'";
+	$sql = "select * from userlist where id= '{$_POST['id']}'";
 	$result = mysqli_query($conn, $sql);
 
 	/*while ($rows = mysqli_fetch_assoc($result)) {
